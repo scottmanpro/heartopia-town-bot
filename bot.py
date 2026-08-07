@@ -19,7 +19,7 @@ today_fluorite = FLUORITE_DATA[index]
 webhook_url = os.environ.get("DISCORD_WEBHOOK")
 data = {
     "username": "心動小鎮採集小助手",
-    "avatar_url": "https://i.imgur.com/4M34gB0.png",
+    "avatar_url": "https://imgur.com/P480et0",
     "embeds": [{
         "title": f"📢 今日採集點預報 ({today.strftime('%Y-%m-%d')})",
         "color": 3447003,
@@ -27,7 +27,7 @@ data = {
             {"name": "🌳 溜溜木位置", "value": f"**{today_oak}** 號區域", "inline": True},
             {"name": "💎 螢石位置", "value": f"**{today_fluorite}** 號區域", "inline": True}
         ],
-        "footer": {"text": "心動小鎮 • 50天循環規律自動推播"}
+        "footer": {"text": "心動小鎮 • 50天循環規律自動推播 • 由諾諾贊助"}
     }]
 }
 
