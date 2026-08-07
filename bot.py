@@ -19,7 +19,7 @@ today_fluorite = FLUORITE_DATA[index]
 webhook_url = os.environ.get("DISCORD_WEBHOOK")
 data = {
     "username": "心動小鎮採集小助手",
-    "avatar_url": "https://imgur.com/P480et0",
+    "avatar_url": "https://i.imgur.com/P480et0.jpeg",
     "embeds": [{
         "title": f"📢 今日採集點預報 ({today.strftime('%Y-%m-%d')})",
         "color": 3447003,
