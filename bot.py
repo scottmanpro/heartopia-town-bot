@@ -24,8 +24,8 @@ data = {
         "title": f"📢 今日採集點預報 ({today.strftime('%Y-%m-%d')})",
         "color": 3447003,
         "fields": [
-            {"name": "🌳 溜溜木位置", "value": f"**{today_oak}** 號區域", "inline": True},
-            {"name": "💎 螢石位置", "value": f"**{today_fluorite}** 號區域", "inline": True}
+            {"name": "🌳 溜溜木位置", "  value": f"**{today_oak}** 號區域", "inline": True},
+            {"name": "💎 螢石位置", "  value": f"**{today_fluorite}** 號區域", "inline": True}
         ],
         "footer": {"text": "心動小鎮 • 50天循環規律自動推播 • 由諾諾贊助"}
     }]
