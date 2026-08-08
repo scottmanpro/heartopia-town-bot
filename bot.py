@@ -15,6 +15,10 @@ index = (diff_days + 49) % 50
 today_oak = OAK_DATA[index]
 today_fluorite = FLUORITE_DATA[index]
 
+# 格式化顯示文字 (避免出現「遺跡 號區域」)
+oak_text = f"**{today_oak}**" if today_oak in ["遺跡", "松林"] else f"**{today_oak}** 號區域"
+fluorite_text = f"**{today_fluorite}**" if today_fluorite in ["遺跡", "松林"] else f"**{today_fluorite}** 號區域"
+
 # 3. 組裝 Discord 美化卡片 (Embed)
 webhook_url = os.environ.get("DISCORD_WEBHOOK")
 data = {
@@ -24,8 +28,8 @@ data = {
         "title": f"📢 今日採集點預報 ({today.strftime('%Y-%m-%d')})",
         "color": 3447003,
         "fields": [
-            {"name": "🌳 溜溜木位置", "value": f"  **{today_oak}** 號區域", "inline": True},
-            {"name": "💎 螢石位置", "value": f"  **{today_fluorite}** 號區域", "inline": True}
+            {"name": "🌳 溜溜木位置", "value": oak_text, "inline": True},
+            {"name": "💎 螢石位置", "value": fluorite_text, "inline": True}
         ],
         "footer": {"text": "心動小鎮 • 50天循環規律自動推播 • 由諾諾贊助"}
     }]
@@ -33,4 +37,5 @@ data = {
 
 # 4. 發送至 Discord
 if webhook_url:
-    requests.post(webhook_url, json=data)
+    response = requests.post(webhook_url, json=data)
+    print(f"Discord Response Status Code: {response.status_code}")
