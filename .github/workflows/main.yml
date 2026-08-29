@@ -1,9 +1,10 @@
 name: Daily Heartopia Tracker
 
 on:
-  schedule:
+  # schedule:
+    # 已改用cron-job.org
     # UTC 時間 07:00 等於香港/台灣時間早上 14:00
-    - cron: '0 6 * * *'
+    # - cron: '0 6 * * *'
   workflow_dispatch: # 允許在 GitHub 頁面上手動觸發測試
 
 jobs:
